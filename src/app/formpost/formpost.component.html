@@ -1,0 +1,143 @@
+<form>
+  <div class="row">
+    <div class="col">
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" #shop>
+
+        <option value="PL01">Plaza Lama Duarte</option>
+        <option value="PL02">Feria</option>
+        <option value="PL03">Plaza Lama Herrera</option>
+        <option value="PL04">Electrolama Santiago</option>
+        <option value="PL05">Liquidacion</option>
+        <option value="PL06">Venta al Por Mayor</option>
+        <option value="PL08">Plaza Lama 27 Feb.</option>
+        <option value="PL09">Tienda Virtual</option>
+
+
+      </select>
+    </div>
+
+    <div class="col">
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" #documentype>
+
+        <option value="1">RNC</option>
+        <option value="2">Identification card</option>
+
+      </select>
+      </div>
+      <div class="col">
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" #typencf>
+          <option value="2">Credito Fiscal</option>
+          <option value="1">Consumidor Final</option>
+
+          <option value="3">Gubernamental</option>
+
+        </select>
+      </div>
+
+</div>
+
+    <div class="row">
+
+      <div class="col">
+        <input type="text" class="form-control" placeholder="RNC or Identification"  #rnc>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="First Name"  #firstname>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Last Name"  #lastname>
+      </div>
+
+</div>
+<br>
+<div class="row">
+
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Address"  #address>
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Phone"  #phone>
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Email"  #email>
+    </div>
+
+
+</div>
+<br>
+<div class="row">
+
+
+      <div class="col">
+        <input type="text" class="form-control" placeholder="City"  #city>
+      </div>
+      <div class="col">
+        <label>Delivery<span>
+        <input type="checkbox"  [checked]="check" (change)="buld($event)"  ></span></label>
+
+      </div>
+      <div class="col">
+        <label>Other Persons<span>
+        <input type="checkbox" [checked]="checkfalse" (change)="buldfalse($event)"></span></label>
+      </div>
+      <div class="col">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Note" #note></textarea>
+      </div>
+</div>
+<br>
+<div class="row">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Name other Persons" >
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Document other Persons" >
+  </div>
+
+  <div class="col">
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" #gateway>
+      <option value="azul">Azul</option>
+      <option value="cardnet">Cardnet</option>
+      <option value="visanet">Visanet</option>
+
+    </select>
+  </div>
+
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Sku"  #sku>
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Title"  #title>
+  </div>
+
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Quantity"  #quantity>
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Price"  #price>
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Tarjeta"  #tarjeta>
+  </div>
+
+</div>
+
+<br>
+      <div class="row">
+        <div class="col-md-3 ml-md-auto">
+            <button  type="button"  class="btn btn-secondary btn-lg " (click)="agregar(
+            shop.value, documentype.value,
+            typencf.value, rnc.value, firstname.value,
+             lastname.value,address.value, phone.value,
+             email.value,  city.value,
+              note.value, gateway.value,
+              sku.value, title.value, quantity.value,
+           price.value, tarjeta.value)">Enviar</button>
+        </div>
+        <div class="col-5">
+            <button type="reset" class="btn btn-danger btn-lg">Limpiar</button>
+        </div>
+          </div>
+
+
+
+  </form>
